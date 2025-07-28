@@ -1,0 +1,103 @@
+{
+  "resourceType": "QuestionnaireResponse",
+  "id": "CommunityFacingQuestionnaireResponseFlorenceBennett",
+  "questionnaire": "https://simplifier.net/guide/hmb-fhir-ig/Questionnaire/community-facing-questionnaire",
+  "status": "in-progress",
+  "item": [
+    {
+      "linkId": "1",
+      "text": "PERSONAL INFORMATION",
+      "item": [
+        {
+          "linkId": "1.1",
+          "text": "First Name",
+          "answer": [
+            {
+              "valueString": "Florence"
+            }
+          ]
+        },
+        {
+          "linkId": "1.2",
+          "text": "Surname",
+          "answer": [
+            {
+              "valueString": "Bennett"
+            }
+          ]
+        },
+        {
+          "linkId": "1.3",
+          "text": "Preferred Name",
+          "answer": [
+            {
+              "valueString": "Flo"
+            }
+          ]
+        },
+        {
+          "linkId": "1.4",
+          "text": "DOB",
+          "answer": [
+            {
+              "valueDate": "1951-01-20"
+            }
+          ]
+        },
+        {
+          "linkId": "1.5",
+          "text": "Email",
+          "answer": [
+            {
+              "valueString": "flo@example.com"
+            }
+          ]
+        },
+        {
+          "linkId": "1.6",
+          "text": "Please outline your main health related concern(s)",
+          "answer": [
+            {
+              "valueString": "Heavy Periods (fatigue, occasional dizziness, need to change protection every 1-2 hours on heavy days)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "2",
+      "text": "PAST MEDICAL HISTORY",
+      "item": [
+        {
+          "linkId": "2.1",
+          "text": "Please check any past or current medical conditions that apply to you",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "195967001",
+                "system": "http://snomed.info/sct",
+                "display": "Asthma (disorder)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "52702003",
+                "system": "http://snomed.info/sct",
+                "display": "Chronic fatigue syndrome (disorder)"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "2.2",
+          "text": "Childhood Disease",
+          "answer": [
+            {
+              "valueString": "Measles"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

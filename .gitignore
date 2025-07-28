@@ -10,3 +10,6 @@ fsh-generated/**
 
 # editing files and folders
 .vscode/**
+
+# Simplifier
+.simplifier/project.snapshot.json

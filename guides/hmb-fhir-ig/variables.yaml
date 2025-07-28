@@ -1,0 +1,20 @@
+# Rendering settings
+expand: yes
+
+# Project details
+project-url-key: Menstrual-Bleeding
+
+# Guide details
+guide-url-key: hmb-fhir-ig
+
+guide-status: Draft
+
+publisher-name: Women for FHIR
+
+publisher-url: https://simplifier.net/guide/hmb-fhir-ig
+
+publisher-logo: Women for FHIR avatar 64px.png
+
+publish-box: Please note, this guide is currently under development and subject to change.
+
+Data Workflow: Data Workflow

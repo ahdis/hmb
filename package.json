@@ -1,0 +1,14 @@
+{
+  "name": "hl7.fhir.wff.hmb",
+  "author": "https://simplifier.net/organization/women-for-fhir",
+  "version": "0.1.0",
+  "dependencies": {
+    "hl7.fhir.r4.core": "4.0.1",
+    "hl7.fhir.uv.sdc": "3.0.0"
+  },
+  "fhirVersions": [
+    "4.0.1"
+  ],
+  "jurisdiction": "http://unstats.un.org/unsd/methods/m49/m49.htm#001",
+  "license": "CC0-1.0"
+}

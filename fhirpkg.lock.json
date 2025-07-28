@@ -1,0 +1,9 @@
+{
+  "updated": "2025-07-28T11:08:58.023968+02:00",
+  "dependencies": {
+    "hl7.fhir.r4.core": "4.0.1",
+    "hl7.fhir.uv.sdc": "3.0.0",
+    "hl7.fhir.r4.examples": "4.0.1"
+  },
+  "missing": {}
+}

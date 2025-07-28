@@ -1,0 +1,30 @@
+{
+  "resourceType": "Patient",
+  "id": "FlorenceBennett",
+  "name": [
+    {
+      "family": "Bennett",
+      "given": [
+        "Florence"
+      ],
+      "use": "official"
+    },
+    {
+      "given": [
+        "Flo"
+      ],
+      "use": "usual"
+    }
+  ],
+  "birthDate": "1951-01-20",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "flo@example.com"
+        }
+      ]
+    }
+  ]
+}

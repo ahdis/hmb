@@ -1,0 +1,23 @@
+{
+  "resourceType": "QuestionnaireResponse",
+  "id": "SpecialistReferralQuestionnaireResponseEmmaClark",
+  "questionnaire": "https://simplifier.net/guide/hmb-fhir-ig/Questionnaire/specialist-referral-questionnaire",
+  "status": "in-progress",
+  "item": [
+    {
+      "linkId": "1",
+      "text": "TBD",
+      "item": [
+        {
+          "linkId": "1.1",
+          "text": "Date",
+          "answer": [
+            {
+              "valueDate": "2025-05-29"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

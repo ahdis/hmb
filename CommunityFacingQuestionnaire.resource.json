@@ -1,0 +1,3255 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "CommunityFacingQuestionnaire",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire"
+    ]
+  },
+  "url": "https://simplifier.net/guide/hmb-fhir-ig/Questionnaire/community-facing-questionnaire",
+  "name": "CommunityFacingQuestionnaire",
+  "title": "Community-facing Questionnaire",
+  "status": "draft",
+  "experimental": true,
+  "description": "FHIR Questionnaire based on the 'Heavy Menstrual Bleeding (HMB) Patient Questionnaire' from Women's Health Road (Australia)",
+  "item": [
+    {
+      "linkId": "1",
+      "text": "PERSONAL INFORMATION",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "1.1",
+          "text": "First Name",
+          "type": "string",
+          "required": true,
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.name.given"
+        },
+        {
+          "linkId": "1.2",
+          "text": "Surname",
+          "type": "string",
+          "required": true,
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.name.family"
+        },
+        {
+          "linkId": "1.3",
+          "text": "Preferred Name",
+          "type": "string",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.name.given"
+        },
+        {
+          "linkId": "1.4",
+          "text": "DOB",
+          "type": "date",
+          "required": true,
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.birthDate"
+        },
+        {
+          "linkId": "1.5",
+          "text": "Email",
+          "type": "string",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.contact.telecom.value"
+        },
+        {
+          "linkId": "1.6",
+          "text": "Please outline your main health related concern(s)",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "linkId": "2",
+      "text": "PAST MEDICAL HISTORY",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "2.1",
+          "text": "Please check any past or current medical conditions that apply to you",
+          "type": "choice",
+          "repeats": true,
+          "answerValueSet": "https://simplifier.net/guide/hmb-fhir-ig/ValueSet/medical-conditions"
+        },
+        {
+          "linkId": "2.2",
+          "text": "Childhood Disease",
+          "type": "string"
+        },
+        {
+          "linkId": "2.3",
+          "text": "Cardiovascular Disease",
+          "type": "string"
+        },
+        {
+          "linkId": "2.4",
+          "text": "Cancer",
+          "type": "string"
+        },
+        {
+          "linkId": "2.5",
+          "text": "Other",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "linkId": "3",
+      "text": "MENSTRUAL HISTORY (FIGO AUB PARAMETERS, SAMANTA, VAS, PIPPA)",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "3.1",
+          "text": "Age of first menstrual period",
+          "type": "integer",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+              "valueCoding": {
+                "code": "a",
+                "system": "http://unitsofmeasure.org",
+                "display": "year"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "3.2",
+          "text": "Date your last period began",
+          "type": "date"
+        },
+        {
+          "linkId": "3.3",
+          "text": "Duration of menstrual period",
+          "type": "integer",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+              "valueCoding": {
+                "code": "d",
+                "system": "http://unitsofmeasure.org",
+                "display": "day"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "3.4",
+          "text": "Regularity of period length",
+          "type": "choice",
+          "repeats": false,
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "regular",
+                "display": "Regular variation"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "irregular",
+                "display": "Irregular"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "3.5",
+          "text": "Flow Volume",
+          "type": "choice",
+          "repeats": false,
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "heavy",
+                "display": "Heavy"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "normal",
+                "display": "Normal"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "light",
+                "display": "Light"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "3.6",
+          "text": "Please assess the intensity of your menstrual bleeding, generally (0 = No bleeding at all, 10 = The heaviest possible menstrual bleeding I have ever had)",
+          "type": "integer",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "slider",
+                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-sliderStepValue",
+              "valueInteger": 1
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/minValue",
+              "valueInteger": 0
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+              "valueInteger": 10
+            }
+          ]
+        },
+        {
+          "linkId": "3.7",
+          "text": "No. days between periods",
+          "type": "choice",
+          "repeats": false,
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "absent",
+                "display": "Absent (no periods/bleeding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "frequent",
+                "display": "Frequent (< 24 days)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "normal",
+                "display": "Normal (24 - 38 days)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "infrequent",
+                "display": "Infrequent (>38 days)"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "3.8",
+          "text": "Predictability (regularity) of cycle length",
+          "type": "choice",
+          "repeats": false,
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "absent",
+                "display": "Absent (no periods/bleeding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "predictable",
+                "display": "Predictable (regular, varies by 2-7 days in length)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "unpredictable",
+                "display": "Unpredictable (irregular, varies by > 10 days in length)"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "3.9",
+          "text": "Do you experience any Intermenstrual Bleeding (IMB) (bleeding in between periods)",
+          "type": "choice",
+          "repeats": false,
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "none",
+                "display": "None"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "random",
+                "display": "Random"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "cyclic-predictable",
+                "display": "Cyclic/Predictable"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "3.9.1",
+          "text": "When in your cycle does the bleeding occur?",
+          "type": "choice",
+          "repeats": false,
+          "enableWhen": [
+            {
+              "question": "3.9",
+              "operator": "=",
+              "answerCoding": {
+                "code": "cyclic-predictable"
+              }
+            }
+          ],
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "early-cycle",
+                "display": "Early Cycle"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "mid-cycle",
+                "display": "Mid Cycle"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "late-cycle",
+                "display": "Late Cycle"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "3.10",
+          "text": "To what extent does your period impact your daily activities (0 = It does not interfere with my daily activities at all, 10 = It completely interferes with my daily activities)",
+          "type": "integer",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "slider",
+                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-sliderStepValue",
+              "valueInteger": 1
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/minValue",
+              "valueInteger": 0
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+              "valueInteger": 10
+            }
+          ]
+        },
+        {
+          "linkId": "3.11",
+          "text": "During heavier bleeding days do you",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "3.11.1",
+              "text": "Have to use double protection or get up to change your sanitary protection during the night?",
+              "type": "choice",
+              "repeats": false,
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "373066001",
+                    "system": "http://snomed.info/sct",
+                    "display": "Yes"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "373067005",
+                    "system": "http://snomed.info/sct",
+                    "display": "No"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "3.11.2",
+              "text": "Worry about staining the seat of your chair, sofa, etc?",
+              "type": "choice",
+              "repeats": false,
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "373066001",
+                    "system": "http://snomed.info/sct",
+                    "display": "Yes"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "373067005",
+                    "system": "http://snomed.info/sct",
+                    "display": "No"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "3.11.3",
+              "text": "Avoid certain activities, travel, or leisure plans, because you need to change your tampon or pad frequently?",
+              "type": "choice",
+              "repeats": false,
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "373066001",
+                    "system": "http://snomed.info/sct",
+                    "display": "Yes"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "373067005",
+                    "system": "http://snomed.info/sct",
+                    "display": "No"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "3.12",
+          "text": "Period Pain",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "3.12.1",
+              "text": "Do you have period pain?",
+              "type": "choice",
+              "repeats": false,
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "373066001",
+                    "system": "http://snomed.info/sct",
+                    "display": "Yes"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "373067005",
+                    "system": "http://snomed.info/sct",
+                    "display": "No"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "84638005",
+                    "system": "http://snomed.info/sct",
+                    "display": "Occasional"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "3.12.2",
+              "text": "Pain Score (0 = Little to no pain, 10 = Severe Pain)",
+              "type": "integer",
+              "enableWhen": [
+                {
+                  "question": "3.12.1",
+                  "operator": "!=",
+                  "answerCoding": {
+                    "code": "373067005",
+                    "system": "http://snomed.info/sct"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "slider",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-sliderStepValue",
+                  "valueInteger": 1
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/minValue",
+                  "valueInteger": 0
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+                  "valueInteger": 10
+                }
+              ]
+            },
+            {
+              "linkId": "3.12.3",
+              "text": "How old were you when your periods became painful?",
+              "type": "integer",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                  "valueCoding": {
+                    "code": "a",
+                    "system": "http://unitsofmeasure.org",
+                    "display": "year"
+                  }
+                }
+              ],
+              "enableWhen": [
+                {
+                  "question": "3.12.1",
+                  "operator": "!=",
+                  "answerCoding": {
+                    "code": "373067005",
+                    "system": "http://snomed.info/sct"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "3.12.4",
+              "text": "How many days each month do you have period pain for?",
+              "type": "integer",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                  "valueCoding": {
+                    "code": "d",
+                    "system": "http://unitsofmeasure.org",
+                    "display": "day"
+                  }
+                }
+              ],
+              "enableWhen": [
+                {
+                  "question": "3.12.1",
+                  "operator": "!=",
+                  "answerCoding": {
+                    "code": "373067005",
+                    "system": "http://snomed.info/sct"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "3.13",
+          "text": "Where do you feel your period pain?",
+          "type": "choice",
+          "repeats": true,
+          "enableWhen": [
+            {
+              "question": "3.12.1",
+              "operator": "!=",
+              "answerCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct"
+              }
+            }
+          ],
+          "answerValueSet": "https://simplifier.net/guide/hmb-fhir-ig/ValueSet/period-pain-body-sites"
+        },
+        {
+          "linkId": "3.13.1",
+          "text": "Other (please specify)",
+          "type": "string",
+          "enableWhen": [
+            {
+              "question": "3.13",
+              "operator": "=",
+              "answerCoding": {
+                "code": "74964007",
+                "system": "http://snomed.info/sct"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "3.14",
+          "text": "Do period pain medications (Ibuprofen, Ponstan, Naprogesic etc.) help your period pain?",
+          "type": "choice",
+          "repeats": false,
+          "enableWhen": [
+            {
+              "question": "3.12.1",
+              "operator": "!=",
+              "answerCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct"
+              }
+            }
+          ],
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "little",
+                "display": "A little"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "not-at-all",
+                "display": "Not at all"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "never-tried",
+                "display": "I have never tried these medications"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "4",
+      "text": "SEXUAL AND REPRODUCTIVE HISTORY",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "4.1",
+          "text": "Are you currently sexually active?",
+          "type": "choice",
+          "repeats": false,
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "radio-button",
+                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                  }
+                ]
+              }
+            }
+          ],
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "4.2",
+          "text": "Are you currently trying to get pregnant?",
+          "type": "choice",
+          "repeats": false,
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "radio-button",
+                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                  }
+                ]
+              }
+            }
+          ],
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "want-in-future",
+                "display": "Want in future"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "4.3",
+          "text": "Do you experience any bleeding after sexual intercourse?",
+          "type": "choice",
+          "repeats": false,
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "radio-button",
+                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                  }
+                ]
+              }
+            }
+          ],
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "4.4",
+          "text": "Do you experience any excessive pain during sexual intercourse?",
+          "type": "choice",
+          "repeats": false,
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "radio-button",
+                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                  }
+                ]
+              }
+            }
+          ],
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "4.4.1",
+          "text": "How would you describe this pain on a scale from 1-10? (0 = Little to no pain, 10 = Severe Pain)",
+          "type": "integer",
+          "enableWhen": [
+            {
+              "question": "4.4",
+              "operator": "=",
+              "answerCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct"
+              }
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "slider",
+                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-sliderStepValue",
+              "valueInteger": 1
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/minValue",
+              "valueInteger": 1
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+              "valueInteger": 10
+            }
+          ]
+        },
+        {
+          "linkId": "4.5",
+          "text": "What contraception, if any, are you currently using?",
+          "type": "string",
+          "item": [
+            {
+              "linkId": "4.5.1",
+              "text": "For how long?",
+              "type": "string"
+            },
+            {
+              "linkId": "4.5.2",
+              "text": "For any hormonal contraception, what impact has this had on your period/cycle? (flow volume, duration, frequency etc.)",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "4.6",
+          "text": "What contraception options, if any, have you used in the past?",
+          "type": "string",
+          "item": [
+            {
+              "linkId": "4.6.1",
+              "text": "For any previous hormonal contraception, what impact did they have on your period/cycle?",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "4.7",
+          "text": "Do you have any current or a previous history of sexually transmitted diseases?",
+          "type": "choice",
+          "repeats": false,
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "radio-button",
+                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                  }
+                ]
+              }
+            }
+          ],
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No"
+              }
+            }
+          ],
+          "item": [
+            {
+              "linkId": "4.7.1",
+              "text": "Please provide detail (date, type, treatment)",
+              "type": "string",
+              "enableWhen": [
+                {
+                  "question": "4.7",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "373066001",
+                    "system": "http://snomed.info/sct"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "4.8",
+          "text": "Do you have any other sexual dysfunctions/issues related to sex?",
+          "type": "string"
+        },
+        {
+          "linkId": "4.9",
+          "text": "Please let us know of any previous pregnancy history including abortions & miscarriages (if comfortable)",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "4.9.1",
+              "text": "Please provide the following information for each pregnancy",
+              "type": "group",
+              "repeats": true,
+              "item": [
+                {
+                  "linkId": "4.9.1.1",
+                  "text": "Birthplace",
+                  "type": "string"
+                },
+                {
+                  "linkId": "4.9.1.2",
+                  "text": "Date",
+                  "type": "date"
+                },
+                {
+                  "linkId": "4.9.1.3",
+                  "text": "Gestation",
+                  "type": "integer",
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                      "valueCoding": {
+                        "code": "wk",
+                        "system": "http://unitsofmeasure.org",
+                        "display": "week"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/minValue",
+                      "valueInteger": 1
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+                      "valueInteger": 45
+                    }
+                  ]
+                },
+                {
+                  "linkId": "4.9.1.4",
+                  "text": "Type of Birth (e.g. Vaginal or C/S)",
+                  "type": "string"
+                },
+                {
+                  "linkId": "4.9.1.5",
+                  "text": "Model of Care (e.g. Midwife, Public/Private OB)",
+                  "type": "string"
+                },
+                {
+                  "linkId": "4.9.1.6",
+                  "text": "Birth Weight",
+                  "type": "integer",
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                      "valueCoding": {
+                        "code": "g",
+                        "system": "http://unitsofmeasure.org",
+                        "display": "gram"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/minValue",
+                      "valueInteger": 300
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+                      "valueInteger": 6000
+                    }
+                  ]
+                },
+                {
+                  "linkId": "4.9.1.7",
+                  "text": "Name of Child (if applicable)",
+                  "type": "string"
+                },
+                {
+                  "linkId": "4.9.1.8",
+                  "text": "Sex of Child (if applicable)",
+                  "type": "string"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "4.10",
+          "text": "Cervical Screening Test (CST)",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "4.10.1",
+              "text": "When was your most recent CST (Pap Smear)?",
+              "type": "date"
+            },
+            {
+              "linkId": "4.10.2",
+              "text": "What was the result of your most recent CST?",
+              "type": "string"
+            },
+            {
+              "linkId": "4.10.3",
+              "text": "Any past abnormal CST(s)? Please provide details",
+              "type": "string"
+            },
+            {
+              "linkId": "4.10.4",
+              "text": "If possible, please provide a copy of your most recent screening test(s) results or bring a copy of these results with you on the day of your appointment.",
+              "type": "display"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "5",
+      "text": "ASSOCIATED OR SYSTEMIC SYMPTOMS",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "5.1",
+          "text": "Do you experience any pelvic pain?",
+          "type": "choice",
+          "repeats": false,
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "radio-button",
+                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                  }
+                ]
+              }
+            }
+          ],
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "5.1.1",
+          "text": "Indicate on the scale of 1-10 how you would describe this pain (0 = Little to no pain, 5 = Moderate Pain, 10 = Severe Pain)",
+          "type": "integer",
+          "enableWhen": [
+            {
+              "question": "5.1",
+              "operator": "=",
+              "answerCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct"
+              }
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "slider",
+                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-sliderStepValue",
+              "valueInteger": 1
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/minValue",
+              "valueInteger": 0
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+              "valueInteger": 10
+            }
+          ]
+        },
+        {
+          "linkId": "5.2",
+          "text": "Have you noticed any abnormal vaginal discharge?",
+          "type": "choice",
+          "repeats": false,
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "radio-button",
+                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                  }
+                ]
+              }
+            }
+          ],
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "5.2.1",
+          "text": "Please provide detail",
+          "type": "string",
+          "enableWhen": [
+            {
+              "question": "5.2",
+              "operator": "=",
+              "answerCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "5.3",
+          "text": "Do you currently have any urinary and/or bowel related concerns?",
+          "type": "choice",
+          "repeats": false,
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "radio-button",
+                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                  }
+                ]
+              }
+            }
+          ],
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "5.3.1",
+          "text": "Please provide detail (i.e. motion of passing/incontinence issues etc.)",
+          "type": "string",
+          "enableWhen": [
+            {
+              "question": "5.3",
+              "operator": "=",
+              "answerCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "5.4",
+          "text": "What is your current weight?",
+          "type": "decimal",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+              "valueCoding": {
+                "code": "kg",
+                "system": "http://unitsofmeasure.org",
+                "display": "kilogram"
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/minValue",
+              "valueDecimal": 20
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+              "valueDecimal": 300
+            }
+          ]
+        },
+        {
+          "linkId": "5.5",
+          "text": "What is your height?",
+          "type": "integer",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+              "valueCoding": {
+                "code": "cm",
+                "system": "http://unitsofmeasure.org",
+                "display": "centimeter"
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/minValue",
+              "valueInteger": 100
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+              "valueInteger": 250
+            }
+          ]
+        },
+        {
+          "linkId": "5.6",
+          "text": "Have you noticed any significant weight loss or gain?",
+          "type": "choice",
+          "repeats": false,
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "radio-button",
+                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                  }
+                ]
+              }
+            }
+          ],
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "5.6.1",
+          "text": "Details",
+          "type": "string",
+          "enableWhen": [
+            {
+              "question": "5.6",
+              "operator": "=",
+              "answerCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "5.7",
+          "text": "Have you had any blood tests done in the past 12 months?",
+          "type": "choice",
+          "repeats": false,
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "radio-button",
+                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                  }
+                ]
+              }
+            }
+          ],
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "5.7.1",
+          "text": "Date of most recent test",
+          "type": "date",
+          "enableWhen": [
+            {
+              "question": "5.7",
+              "operator": "=",
+              "answerCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "5.7.2",
+          "text": "Pathology Provider",
+          "type": "string",
+          "enableWhen": [
+            {
+              "question": "5.7",
+              "operator": "=",
+              "answerCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "5.7.3",
+          "text": "Any clinically significant blood results & outcomes?",
+          "type": "string",
+          "enableWhen": [
+            {
+              "question": "5.7",
+              "operator": "=",
+              "answerCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "5.8",
+          "text": "Have you had any medical imaging (i.e. Ultrasound, MRI - of pelvis/abdomen) done in the past 12 months?",
+          "type": "choice",
+          "repeats": false,
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "radio-button",
+                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                  }
+                ]
+              }
+            }
+          ],
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "5.8.1",
+          "text": "Please provide the following imaging details",
+          "type": "group",
+          "repeats": true,
+          "enableWhen": [
+            {
+              "question": "5.8",
+              "operator": "=",
+              "answerCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct"
+              }
+            }
+          ],
+          "item": [
+            {
+              "linkId": "5.8.1.1",
+              "text": "Type of Imaging",
+              "type": "string"
+            },
+            {
+              "linkId": "5.8.1.2",
+              "text": "Date",
+              "type": "date"
+            },
+            {
+              "linkId": "5.8.1.3",
+              "text": "Imaging Provider & Location",
+              "type": "string"
+            },
+            {
+              "linkId": "5.8.1.4",
+              "text": "Clinical Reason",
+              "type": "string"
+            },
+            {
+              "linkId": "5.8.1.5",
+              "text": "Results / Findings",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "6",
+      "text": "CURRENT MEDICATIONS",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "6.1",
+          "text": "Please provide your current medications",
+          "type": "group",
+          "repeats": true,
+          "item": [
+            {
+              "linkId": "6.1.1",
+              "text": "Medication",
+              "type": "string"
+            },
+            {
+              "linkId": "6.1.2",
+              "text": "Dose",
+              "type": "string"
+            },
+            {
+              "linkId": "6.1.3",
+              "text": "Frequency",
+              "type": "string"
+            },
+            {
+              "linkId": "6.1.4",
+              "text": "Reason for Medication",
+              "type": "string"
+            },
+            {
+              "linkId": "6.1.5",
+              "text": "Duration you have been taking this medication for",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "7",
+      "text": "FAMILY HISTORY",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "7.1",
+          "text": "Blood and Clotting Disorders",
+          "type": "choice",
+          "repeats": true,
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "vwd",
+                "display": "Von Willebrand disease"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "haem",
+                "display": "Haemophilia"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "thromb",
+                "display": "Thrombophilia (e.g. Factor V Leiden, Protein C/S deficiency)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "bruising",
+                "display": "Easy bruising or excessive bleeding"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "clots",
+                "display": "History of blood clots (DVT, stroke before age 50)"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "7.2",
+          "text": "Endocrine and Hormonal Conditions",
+          "type": "choice",
+          "repeats": true,
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "thyroid",
+                "display": "Thyroid Disease"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "pcos",
+                "display": "PCOS"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "diabetes",
+                "display": "Diabetes (Type 1 or Type 2)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "menopause",
+                "display": "Early menopause / premature ovarian insufficiency"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "adrenal",
+                "display": "Adrenal disorders"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "7.3",
+          "text": "Cancer / Malignancy",
+          "type": "choice",
+          "repeats": true,
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "breast",
+                "display": "Breast Cancer"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "ovarian",
+                "display": "Ovarian cancer"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "uterine",
+                "display": "Uterine (endometrial cancer)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "cervical",
+                "display": "Cervical cancer"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "colon",
+                "display": "Colon cancer (<50 yrs or related to Lynch Syndrome)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "hereditary",
+                "display": "Other hereditary cancers (e.g. BRCA1/2, Lynch Syndrome)"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "7.4",
+          "text": "Other relevant conditions",
+          "type": "choice",
+          "repeats": true,
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "endometriosis",
+                "display": "Endometriosis or adenomyosis"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "fibroids",
+                "display": "Fibroids"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "osteoporosis",
+                "display": "Osteoporosis or early bone loss"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "cardio",
+                "display": "Cardiovascular disease"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "autoimmune",
+                "display": "Autoimmune conditions"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "genetic",
+                "display": "Genetic syndromes (e.g. Turner syndrome, Kallmann syndrome)"
+              }
+            }
+          ],
+          "item": [
+            {
+              "linkId": "7.4.1",
+              "text": "Cardiovascular disease <55 yrs",
+              "type": "choice",
+              "repeats": false,
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "373066001",
+                    "system": "http://snomed.info/sct",
+                    "display": "Yes"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "373067005",
+                    "system": "http://snomed.info/sct",
+                    "display": "No"
+                  }
+                }
+              ],
+              "enableWhen": [
+                {
+                  "question": "7.4",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "cardio"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "7.5",
+          "text": "Please provide details about the conditions you selected above (i.e. date & age at diagnosis, outcome of diagnosis, type of cancer etc.)",
+          "type": "string",
+          "repeats": true,
+          "enableWhen": [
+            {
+              "question": "7.1",
+              "operator": "exists",
+              "answerBoolean": true
+            },
+            {
+              "question": "7.2",
+              "operator": "exists",
+              "answerBoolean": true
+            },
+            {
+              "question": "7.3",
+              "operator": "exists",
+              "answerBoolean": true
+            },
+            {
+              "question": "7.4",
+              "operator": "exists",
+              "answerBoolean": true
+            }
+          ],
+          "enableBehavior": "any"
+        }
+      ]
+    },
+    {
+      "linkId": "8",
+      "text": "SOCIAL HISTORY",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "8.1",
+          "text": "Do you currently have a partner(s)?",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No"
+              }
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "radio-button",
+                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                  }
+                ]
+              }
+            }
+          ],
+          "item": [
+            {
+              "linkId": "8.1.1",
+              "text": "If you are comfortable to share, what is your partner/s' name and sex/gender/age?",
+              "type": "string",
+              "repeats": true,
+              "enableWhen": [
+                {
+                  "question": "8.1",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "373066001",
+                    "system": "http://snomed.info/sct"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "8.2",
+          "text": "Are you currently working?",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No"
+              }
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "radio-button",
+                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                  }
+                ]
+              }
+            }
+          ],
+          "item": [
+            {
+              "linkId": "8.2.1",
+              "text": "Please provide details about your work",
+              "type": "group",
+              "repeats": true,
+              "enableWhen": [
+                {
+                  "question": "8.2",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "373066001",
+                    "system": "http://snomed.info/sct"
+                  }
+                }
+              ],
+              "item": [
+                {
+                  "linkId": "8.2.1.1",
+                  "text": "Employment Type (PT, FT, Casual)",
+                  "type": "string"
+                },
+                {
+                  "linkId": "8.2.1.2",
+                  "text": "Occupation",
+                  "type": "string"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "8.3",
+          "text": "Are you currently studying?",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No"
+              }
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "radio-button",
+                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                  }
+                ]
+              }
+            }
+          ],
+          "item": [
+            {
+              "linkId": "8.3.1",
+              "text": "Institution",
+              "type": "string",
+              "enableWhen": [
+                {
+                  "question": "8.3",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "373066001",
+                    "system": "http://snomed.info/sct"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "8.3.2",
+              "text": "Level & Area of study",
+              "type": "string",
+              "enableWhen": [
+                {
+                  "question": "8.3",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "373066001",
+                    "system": "http://snomed.info/sct"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "8.4",
+          "text": "Lifestyle",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "8.4.1",
+              "text": "Do you currently smoke?",
+              "type": "choice",
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "373066001",
+                    "system": "http://snomed.info/sct",
+                    "display": "Yes"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "373067005",
+                    "system": "http://snomed.info/sct",
+                    "display": "No"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "past",
+                    "display": "In Past"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "vape",
+                    "display": "Vape"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "8.4.2",
+              "text": "Do you take any recreational drugs?",
+              "type": "choice",
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "373066001",
+                    "system": "http://snomed.info/sct",
+                    "display": "Yes"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "373067005",
+                    "system": "http://snomed.info/sct",
+                    "display": "No"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "8.4.3",
+              "text": "How often do you drink Alcohol?",
+              "type": "choice",
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "never",
+                    "display": "Never"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "ltmonthly",
+                    "display": "< Monthly"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "1_2pm",
+                    "display": "1-2 days per month"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "1_2pw",
+                    "display": "1-2 days a week"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "3_4pw",
+                    "display": "3-4 days a week"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "5_6pw",
+                    "display": "5-6 days a week"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "everyday",
+                    "display": "Everyday"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "item": [
+                {
+                  "linkId": "8.4.3.1",
+                  "text": "On each occasion, how much do you normally drink? (1 drink = 1 can of beer, 1 glass of wine, or 1 shot of spirits)",
+                  "type": "choice",
+                  "answerOption": [
+                    {
+                      "valueCoding": {
+                        "code": "1_3",
+                        "display": "1-3"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "3_5",
+                        "display": "3-5"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "5_7",
+                        "display": "5-7"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "7plus",
+                        "display": "7+"
+                      }
+                    }
+                  ],
+                  "enableWhen": [
+                    {
+                      "question": "8.4.3",
+                      "operator": "!=",
+                      "answerCoding": {
+                        "code": "never"
+                      }
+                    }
+                  ],
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "radio-button",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "linkId": "8.4.4",
+              "text": "How many hours of physical activity do you do on an average week?",
+              "type": "decimal",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                  "valueCoding": {
+                    "code": "h",
+                    "system": "http://unitsofmeasure.org",
+                    "display": "hour"
+                  }
+                }
+              ],
+              "item": [
+                {
+                  "linkId": "8.4.4.1",
+                  "text": "Frequency (times per week)",
+                  "type": "integer",
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                      "valueCoding": {
+                        "code": "/wk",
+                        "system": "http://unitsofmeasure.org",
+                        "display": "per week"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "linkId": "8.4.4.2",
+                  "text": "Intensity",
+                  "type": "string"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "9",
+      "text": "SURGICAL HISTORY",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "9.1",
+          "text": "Please provide details for each surgery you have had",
+          "type": "group",
+          "repeats": true,
+          "item": [
+            {
+              "linkId": "9.1.1",
+              "text": "Year",
+              "type": "integer",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/minValue",
+                  "valueInteger": 1900
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+                  "valueInteger": 2100
+                }
+              ]
+            },
+            {
+              "linkId": "9.1.2",
+              "text": "Place of Surgery",
+              "type": "string"
+            },
+            {
+              "linkId": "9.1.3",
+              "text": "Details (Surgeon, Type of Procedure, any complications or issues?, findings)",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "10",
+      "text": "MENOPAUSE",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "10.1",
+          "text": "Does this section apply to you (menopausal or perimenopausal)?",
+          "type": "choice",
+          "required": true,
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No"
+              }
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "radio-button",
+                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "10.1.1",
+          "text": "On the Modified Greene Scale below, judge the severity of your symptoms and record the score.",
+          "type": "group",
+          "enableWhen": [
+            {
+              "question": "10.1",
+              "operator": "=",
+              "answerCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct"
+              }
+            }
+          ],
+          "item": [
+            {
+              "linkId": "10.1.1.1",
+              "text": "Hot flushes",
+              "code": [
+                {
+                  "code": "198436008",
+                  "system": "http://snomed.info/sct",
+                  "display": "Menopausal flushing (finding)"
+                }
+              ],
+              "type": "choice",
+              "required": true,
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "0",
+                    "display": "None"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "1",
+                    "display": "Mild"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "2",
+                    "display": "Moderate"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "3",
+                    "display": "Severe"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "10.1.1.2",
+              "text": "Lightheaded feelings",
+              "type": "choice",
+              "required": true,
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "0",
+                    "display": "None"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "1",
+                    "display": "Mild"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "2",
+                    "display": "Moderate"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "3",
+                    "display": "Severe"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "10.1.1.3",
+              "text": "Headaches",
+              "type": "choice",
+              "required": true,
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "0",
+                    "display": "None"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "1",
+                    "display": "Mild"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "2",
+                    "display": "Moderate"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "3",
+                    "display": "Severe"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "10.1.1.4",
+              "text": "Irritability",
+              "type": "choice",
+              "required": true,
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "0",
+                    "display": "None"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "1",
+                    "display": "Mild"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "2",
+                    "display": "Moderate"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "3",
+                    "display": "Severe"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "10.1.1.5",
+              "text": "Depression",
+              "type": "choice",
+              "required": true,
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "0",
+                    "display": "None"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "1",
+                    "display": "Mild"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "2",
+                    "display": "Moderate"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "3",
+                    "display": "Severe"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "10.1.1.6",
+              "text": "Unloved feelings",
+              "type": "choice",
+              "required": true,
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "0",
+                    "display": "None"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "1",
+                    "display": "Mild"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "2",
+                    "display": "Moderate"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "3",
+                    "display": "Severe"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "10.1.1.7",
+              "text": "Anxiety",
+              "type": "choice",
+              "required": true,
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "0",
+                    "display": "None"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "1",
+                    "display": "Mild"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "2",
+                    "display": "Moderate"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "3",
+                    "display": "Severe"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "10.1.1.8",
+              "text": "Mood changes",
+              "type": "choice",
+              "required": true,
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "0",
+                    "display": "None"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "1",
+                    "display": "Mild"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "2",
+                    "display": "Moderate"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "3",
+                    "display": "Severe"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "10.1.1.9",
+              "text": "Sleeplessness",
+              "type": "choice",
+              "required": true,
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "0",
+                    "display": "None"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "1",
+                    "display": "Mild"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "2",
+                    "display": "Moderate"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "3",
+                    "display": "Severe"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "10.1.1.10",
+              "text": "Unusual tiredness",
+              "type": "choice",
+              "required": true,
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "0",
+                    "display": "None"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "1",
+                    "display": "Mild"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "2",
+                    "display": "Moderate"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "3",
+                    "display": "Severe"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "10.1.1.11",
+              "text": "Backache",
+              "type": "choice",
+              "required": true,
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "0",
+                    "display": "None"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "1",
+                    "display": "Mild"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "2",
+                    "display": "Moderate"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "3",
+                    "display": "Severe"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "10.1.1.12",
+              "text": "Joint pains",
+              "type": "choice",
+              "required": true,
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "0",
+                    "display": "None"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "1",
+                    "display": "Mild"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "2",
+                    "display": "Moderate"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "3",
+                    "display": "Severe"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "10.1.1.13",
+              "text": "Muscle pains",
+              "type": "choice",
+              "required": true,
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "0",
+                    "display": "None"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "1",
+                    "display": "Mild"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "2",
+                    "display": "Moderate"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "3",
+                    "display": "Severe"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "10.1.1.14",
+              "text": "New facial hair",
+              "type": "choice",
+              "required": true,
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "0",
+                    "display": "None"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "1",
+                    "display": "Mild"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "2",
+                    "display": "Moderate"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "3",
+                    "display": "Severe"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "10.1.1.15",
+              "text": "Dry skin",
+              "type": "choice",
+              "required": true,
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "0",
+                    "display": "None"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "1",
+                    "display": "Mild"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "2",
+                    "display": "Moderate"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "3",
+                    "display": "Severe"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "10.1.1.16",
+              "text": "Crawling feelings under the skin",
+              "type": "choice",
+              "required": true,
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "0",
+                    "display": "None"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "1",
+                    "display": "Mild"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "2",
+                    "display": "Moderate"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "3",
+                    "display": "Severe"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "10.1.1.17",
+              "text": "Less sexual feelings",
+              "type": "choice",
+              "required": true,
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "0",
+                    "display": "None"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "1",
+                    "display": "Mild"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "2",
+                    "display": "Moderate"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "3",
+                    "display": "Severe"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "10.1.1.18",
+              "text": "Dry vagina",
+              "type": "choice",
+              "required": true,
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "0",
+                    "display": "None"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "1",
+                    "display": "Mild"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "2",
+                    "display": "Moderate"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "3",
+                    "display": "Severe"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "10.1.1.19",
+              "text": "Uncomfortable intercourse",
+              "type": "choice",
+              "required": true,
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "0",
+                    "display": "None"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "1",
+                    "display": "Mild"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "2",
+                    "display": "Moderate"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "3",
+                    "display": "Severe"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "10.1.1.20",
+              "text": "Urinary frequency changes",
+              "type": "choice",
+              "required": true,
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "0",
+                    "display": "None"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "1",
+                    "display": "Mild"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "2",
+                    "display": "Moderate"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "3",
+                    "display": "Severe"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "11",
+      "text": "OTHER NOTES",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "11.1",
+          "text": "Please use the space below to let us know of anything else we can do or need to note to best support your health journey",
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}

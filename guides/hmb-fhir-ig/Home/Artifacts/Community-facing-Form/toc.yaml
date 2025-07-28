@@ -1,0 +1,8 @@
+- name: Index
+  filename: Index.page.md
+- name: Heavy Menstrual Bleeding (HMB) Patient Questionnaire
+  filename: WHR-HMB-Patient-Questionnaire.page.md  
+- name: Questionnaire
+  filename: Questionnaire.page.md
+- name: QuestionnaireResponse
+  filename: QuestionnaireResponse.page.md

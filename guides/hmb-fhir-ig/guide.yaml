@@ -1,0 +1,6 @@
+title: Heavy Menstrual Bleeding Implementation Guide
+description: Specification describing how FHIR can be applied to support the use case of Heavy Menstrual Bleeding (HMB).
+version: 0.1.0
+style-root: project
+style-name: WomenonFHIRtemplate
+numbered-headings: false
