@@ -1,0 +1,35 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "PeriodFlowVolume",
+  "id": "period-flow-volume",
+  "title": "Period Flow Volume",
+  "description": "ValueSet containing codes for period flow volume",
+  "url": "https://simplifier.net/guide/hmb-fhir-ig/ValueSet/period-flow-volume",
+  "meta": {
+    "versionId": "1",
+    "lastUpdated": "2025-06-05T16:00:00.000+02:00"
+  },
+  "experimental": true,
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "64206003",
+            "display": "Hypomenorrhoea"
+          },
+          {
+            "code": "308550003",
+            "display": "Normal menstrual blood loss"
+          },
+          {
+            "code": "386692008",
+            "display": "Menorrhagia"
+          }
+        ]
+      }
+    ]
+  }
+}
