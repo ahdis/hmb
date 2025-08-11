@@ -1568,6 +1568,52 @@
                 "display": "History of blood clots (DVT, stroke before age 50)"
               }
             }
+          ],
+          "item": [
+            {
+              "linkId": "7.1.1",
+              "text": "Please provide details about the blood and clotting disorders selected above (i.e. date & age at diagnosis, outcome of diagnosis, affected family member etc.)",
+              "type": "string",
+              "repeats": true,
+              "enableWhen": [
+                {
+                  "question": "7.1",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "vwd"
+                  }
+                },
+                {
+                  "question": "7.1",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "haem"
+                  }
+                },
+                {
+                  "question": "7.1",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "thromb"
+                  }
+                },
+                {
+                  "question": "7.1",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "bruising"
+                  }
+                },
+                {
+                  "question": "7.1",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "clots"
+                  }
+                }
+              ],
+              "enableBehavior": "any"
+            }
           ]
         },
         {
@@ -1605,6 +1651,52 @@
                 "code": "adrenal",
                 "display": "Adrenal disorders"
               }
+            }
+          ],
+          "item": [
+            {
+              "linkId": "7.2.1",
+              "text": "Please provide details about the endocrine and hormonal conditions selected above (i.e. date & age at diagnosis, outcome of diagnosis, affected family member etc.)",
+              "type": "string",
+              "repeats": true,
+              "enableWhen": [
+                {
+                  "question": "7.2",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "thyroid"
+                  }
+                },
+                {
+                  "question": "7.2",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "pcos"
+                  }
+                },
+                {
+                  "question": "7.2",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "diabetes"
+                  }
+                },
+                {
+                  "question": "7.2",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "menopause"
+                  }
+                },
+                {
+                  "question": "7.2",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "adrenal"
+                  }
+                }
+              ],
+              "enableBehavior": "any"
             }
           ]
         },
@@ -1649,6 +1741,59 @@
                 "code": "hereditary",
                 "display": "Other hereditary cancers (e.g. BRCA1/2, Lynch Syndrome)"
               }
+            }
+          ],
+          "item": [
+            {
+              "linkId": "7.3.1",
+              "text": "Please provide details about the cancer/malignancy conditions selected above (i.e. date & age at diagnosis, outcome of diagnosis, type of cancer, affected family member etc.)",
+              "type": "string",
+              "repeats": true,
+              "enableWhen": [
+                {
+                  "question": "7.3",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "breast"
+                  }
+                },
+                {
+                  "question": "7.3",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "ovarian"
+                  }
+                },
+                {
+                  "question": "7.3",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "uterine"
+                  }
+                },
+                {
+                  "question": "7.3",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "cervical"
+                  }
+                },
+                {
+                  "question": "7.3",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "colon"
+                  }
+                },
+                {
+                  "question": "7.3",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "hereditary"
+                  }
+                }
+              ],
+              "enableBehavior": "any"
             }
           ]
         },
@@ -1739,37 +1884,59 @@
                   }
                 }
               ]
+            },
+            {
+              "linkId": "7.4.2",
+              "text": "Please provide details about the other relevant conditions selected above (i.e. date & age at diagnosis, outcome of diagnosis, affected family member etc.)",
+              "type": "string",
+              "repeats": true,
+              "enableWhen": [
+                {
+                  "question": "7.4",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "endometriosis"
+                  }
+                },
+                {
+                  "question": "7.4",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "fibroids"
+                  }
+                },
+                {
+                  "question": "7.4",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "osteoporosis"
+                  }
+                },
+                {
+                  "question": "7.4",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "cardio"
+                  }
+                },
+                {
+                  "question": "7.4",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "autoimmune"
+                  }
+                },
+                {
+                  "question": "7.4",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "genetic"
+                  }
+                }
+              ],
+              "enableBehavior": "any"
             }
           ]
-        },
-        {
-          "linkId": "7.5",
-          "text": "Please provide details about the conditions you selected above (i.e. date & age at diagnosis, outcome of diagnosis, type of cancer etc.)",
-          "type": "string",
-          "repeats": true,
-          "enableWhen": [
-            {
-              "question": "7.1",
-              "operator": "exists",
-              "answerBoolean": true
-            },
-            {
-              "question": "7.2",
-              "operator": "exists",
-              "answerBoolean": true
-            },
-            {
-              "question": "7.3",
-              "operator": "exists",
-              "answerBoolean": true
-            },
-            {
-              "question": "7.4",
-              "operator": "exists",
-              "answerBoolean": true
-            }
-          ],
-          "enableBehavior": "any"
         }
       ]
     },

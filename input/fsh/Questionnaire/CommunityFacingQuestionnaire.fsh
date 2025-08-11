@@ -648,6 +648,27 @@ Title: "Community-facing Questionnaire"
 * item[=].item[=].answerOption[+].valueCoding = #bruising "Easy bruising or excessive bleeding"
 * item[=].item[=].answerOption[+].valueCoding = #clots "History of blood clots (DVT, stroke before age 50)"
 
+* item[=].item[=].item[0].linkId = "7.1.1"
+* item[=].item[=].item[=].text = "Please provide details about the blood and clotting disorders selected above (i.e. date & age at diagnosis, outcome of diagnosis, affected family member etc.)"
+* item[=].item[=].item[=].type = #string
+* item[=].item[=].item[=].repeats = true
+* item[=].item[=].item[=].enableWhen[0].question = "7.1"
+* item[=].item[=].item[=].enableWhen[=].operator = #=
+* item[=].item[=].item[=].enableWhen[=].answerCoding = #vwd
+* item[=].item[=].item[=].enableWhen[+].question = "7.1"
+* item[=].item[=].item[=].enableWhen[=].operator = #=
+* item[=].item[=].item[=].enableWhen[=].answerCoding = #haem
+* item[=].item[=].item[=].enableWhen[+].question = "7.1"
+* item[=].item[=].item[=].enableWhen[=].operator = #=
+* item[=].item[=].item[=].enableWhen[=].answerCoding = #thromb
+* item[=].item[=].item[=].enableWhen[+].question = "7.1"
+* item[=].item[=].item[=].enableWhen[=].operator = #=
+* item[=].item[=].item[=].enableWhen[=].answerCoding = #bruising
+* item[=].item[=].item[=].enableWhen[+].question = "7.1"
+* item[=].item[=].item[=].enableWhen[=].operator = #=
+* item[=].item[=].item[=].enableWhen[=].answerCoding = #clots
+* item[=].item[=].item[=].enableBehavior = #any
+
 * item[=].item[+].linkId = "7.2"
 * item[=].item[=].text = "Endocrine and Hormonal Conditions"
 * item[=].item[=].type = #choice
@@ -657,6 +678,27 @@ Title: "Community-facing Questionnaire"
 * item[=].item[=].answerOption[+].valueCoding = #diabetes "Diabetes (Type 1 or Type 2)"
 * item[=].item[=].answerOption[+].valueCoding = #menopause "Early menopause / premature ovarian insufficiency"
 * item[=].item[=].answerOption[+].valueCoding = #adrenal "Adrenal disorders"
+
+* item[=].item[=].item[0].linkId = "7.2.1"
+* item[=].item[=].item[=].text = "Please provide details about the endocrine and hormonal conditions selected above (i.e. date & age at diagnosis, outcome of diagnosis, affected family member etc.)"
+* item[=].item[=].item[=].type = #string
+* item[=].item[=].item[=].repeats = true
+* item[=].item[=].item[=].enableWhen[0].question = "7.2"
+* item[=].item[=].item[=].enableWhen[=].operator = #=
+* item[=].item[=].item[=].enableWhen[=].answerCoding = #thyroid
+* item[=].item[=].item[=].enableWhen[+].question = "7.2"
+* item[=].item[=].item[=].enableWhen[=].operator = #=
+* item[=].item[=].item[=].enableWhen[=].answerCoding = #pcos
+* item[=].item[=].item[=].enableWhen[+].question = "7.2"
+* item[=].item[=].item[=].enableWhen[=].operator = #=
+* item[=].item[=].item[=].enableWhen[=].answerCoding = #diabetes
+* item[=].item[=].item[=].enableWhen[+].question = "7.2"
+* item[=].item[=].item[=].enableWhen[=].operator = #=
+* item[=].item[=].item[=].enableWhen[=].answerCoding = #menopause
+* item[=].item[=].item[=].enableWhen[+].question = "7.2"
+* item[=].item[=].item[=].enableWhen[=].operator = #=
+* item[=].item[=].item[=].enableWhen[=].answerCoding = #adrenal
+* item[=].item[=].item[=].enableBehavior = #any
 
 * item[=].item[+].linkId = "7.3"
 * item[=].item[=].text = "Cancer / Malignancy"
@@ -669,6 +711,30 @@ Title: "Community-facing Questionnaire"
 * item[=].item[=].answerOption[+].valueCoding = #colon "Colon cancer (<50 yrs or related to Lynch Syndrome)"
 * item[=].item[=].answerOption[+].valueCoding = #hereditary "Other hereditary cancers (e.g. BRCA1/2, Lynch Syndrome)"
 
+* item[=].item[=].item[0].linkId = "7.3.1"
+* item[=].item[=].item[=].text = "Please provide details about the cancer/malignancy conditions selected above (i.e. date & age at diagnosis, outcome of diagnosis, type of cancer, affected family member etc.)"
+* item[=].item[=].item[=].type = #string
+* item[=].item[=].item[=].repeats = true
+* item[=].item[=].item[=].enableWhen[0].question = "7.3"
+* item[=].item[=].item[=].enableWhen[=].operator = #=
+* item[=].item[=].item[=].enableWhen[=].answerCoding = #breast
+* item[=].item[=].item[=].enableWhen[+].question = "7.3"
+* item[=].item[=].item[=].enableWhen[=].operator = #=
+* item[=].item[=].item[=].enableWhen[=].answerCoding = #ovarian
+* item[=].item[=].item[=].enableWhen[+].question = "7.3"
+* item[=].item[=].item[=].enableWhen[=].operator = #=
+* item[=].item[=].item[=].enableWhen[=].answerCoding = #uterine
+* item[=].item[=].item[=].enableWhen[+].question = "7.3"
+* item[=].item[=].item[=].enableWhen[=].operator = #=
+* item[=].item[=].item[=].enableWhen[=].answerCoding = #cervical
+* item[=].item[=].item[=].enableWhen[+].question = "7.3"
+* item[=].item[=].item[=].enableWhen[=].operator = #=
+* item[=].item[=].item[=].enableWhen[=].answerCoding = #colon
+* item[=].item[=].item[=].enableWhen[+].question = "7.3"
+* item[=].item[=].item[=].enableWhen[=].operator = #=
+* item[=].item[=].item[=].enableWhen[=].answerCoding = #hereditary
+* item[=].item[=].item[=].enableBehavior = #any
+
 * item[=].item[+].linkId = "7.4"
 * item[=].item[=].text = "Other relevant conditions"
 * item[=].item[=].type = #choice
@@ -680,7 +746,7 @@ Title: "Community-facing Questionnaire"
 * item[=].item[=].answerOption[+].valueCoding = #autoimmune "Autoimmune conditions"
 * item[=].item[=].answerOption[+].valueCoding = #genetic "Genetic syndromes (e.g. Turner syndrome, Kallmann syndrome)"
 
-* item[=].item[=].item[+].linkId = "7.4.1"
+* item[=].item[=].item[0].linkId = "7.4.1"
 * item[=].item[=].item[=].text = "Cardiovascular disease <55 yrs"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].repeats = false
@@ -692,23 +758,29 @@ Title: "Community-facing Questionnaire"
 * item[=].item[=].item[=].enableWhen[=].operator = #=
 * item[=].item[=].item[=].enableWhen[=].answerCoding = #cardio
 
-* item[=].item[+].linkId = "7.5"
-* item[=].item[=].text = "Please provide details about the conditions you selected above (i.e. date & age at diagnosis, outcome of diagnosis, type of cancer etc.)"
-* item[=].item[=].type = #string
-* item[=].item[=].repeats = true
-* item[=].item[=].enableWhen[0].question = "7.1"
-* item[=].item[=].enableWhen[=].operator = #exists
-* item[=].item[=].enableWhen[=].answerBoolean = true
-* item[=].item[=].enableWhen[+].question = "7.2"
-* item[=].item[=].enableWhen[=].operator = #exists
-* item[=].item[=].enableWhen[=].answerBoolean = true
-* item[=].item[=].enableWhen[+].question = "7.3"
-* item[=].item[=].enableWhen[=].operator = #exists
-* item[=].item[=].enableWhen[=].answerBoolean = true
-* item[=].item[=].enableWhen[+].question = "7.4"
-* item[=].item[=].enableWhen[=].operator = #exists
-* item[=].item[=].enableWhen[=].answerBoolean = true
-* item[=].item[=].enableBehavior = #any
+* item[=].item[=].item[+].linkId = "7.4.2"
+* item[=].item[=].item[=].text = "Please provide details about the other relevant conditions selected above (i.e. date & age at diagnosis, outcome of diagnosis, affected family member etc.)"
+* item[=].item[=].item[=].type = #string
+* item[=].item[=].item[=].repeats = true
+* item[=].item[=].item[=].enableWhen[0].question = "7.4"
+* item[=].item[=].item[=].enableWhen[=].operator = #=
+* item[=].item[=].item[=].enableWhen[=].answerCoding = #endometriosis
+* item[=].item[=].item[=].enableWhen[+].question = "7.4"
+* item[=].item[=].item[=].enableWhen[=].operator = #=
+* item[=].item[=].item[=].enableWhen[=].answerCoding = #fibroids
+* item[=].item[=].item[=].enableWhen[+].question = "7.4"
+* item[=].item[=].item[=].enableWhen[=].operator = #=
+* item[=].item[=].item[=].enableWhen[=].answerCoding = #osteoporosis
+* item[=].item[=].item[=].enableWhen[+].question = "7.4"
+* item[=].item[=].item[=].enableWhen[=].operator = #=
+* item[=].item[=].item[=].enableWhen[=].answerCoding = #cardio
+* item[=].item[=].item[=].enableWhen[+].question = "7.4"
+* item[=].item[=].item[=].enableWhen[=].operator = #=
+* item[=].item[=].item[=].enableWhen[=].answerCoding = #autoimmune
+* item[=].item[=].item[=].enableWhen[+].question = "7.4"
+* item[=].item[=].item[=].enableWhen[=].operator = #=
+* item[=].item[=].item[=].enableWhen[=].answerCoding = #genetic
+* item[=].item[=].item[=].enableBehavior = #any
 
 * item[+].linkId = "8"
 * item[=].text = "SOCIAL HISTORY"
