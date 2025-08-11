@@ -17,16 +17,16 @@
         "system": "http://snomed.info/sct",
         "concept": [
           {
-            "code": "64206003",
-            "display": "Hypomenorrhoea"
+            "code": "386692008",
+            "display": "Menorrhagia"
           },
           {
             "code": "308550003",
             "display": "Normal menstrual blood loss"
           },
           {
-            "code": "386692008",
-            "display": "Menorrhagia"
+            "code": "64206003",
+            "display": "Hypomenorrhoea"
           }
         ]
       }

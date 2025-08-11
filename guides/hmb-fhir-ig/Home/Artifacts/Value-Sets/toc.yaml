@@ -4,5 +4,9 @@
   filename: ValueSets.page.md
 - name: Medical Conditions
   filename: Medical-Conditions.page.md
+- name: Period Regularity
+  filename: Period-Regularity.page.md  
+- name: Period Flow Volume
+  filename: Period-Flow-Volume.page.md
 - name: Period Pain Body Sites
   filename: Period-Pain-Body-Sites.page.md

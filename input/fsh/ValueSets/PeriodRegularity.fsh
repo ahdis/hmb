@@ -7,6 +7,6 @@ Description: "ValueSet containing codes for period regularity"
 * ^experimental = true
 * ^status = #draft
 * ^url = "https://simplifier.net/guide/hmb-fhir-ig/ValueSet/period-regularity"
-* $sct#302757007 "Regular periods"
-* $sct#80182007 "Irregular menstruation"
+* $sct#302757007 "Regular periods" // regular variation
+* $sct#80182007 "Irregular menstruation" // irregular
 * $sct#237130006 "Mid-cycle bleeding"

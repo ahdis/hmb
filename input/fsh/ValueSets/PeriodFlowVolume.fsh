@@ -7,6 +7,6 @@ Description: "ValueSet containing codes for period flow volume"
 * ^experimental = true
 * ^status = #draft
 * ^url = "https://simplifier.net/guide/hmb-fhir-ig/ValueSet/period-flow-volume"
-* $sct#64206003 "Hypomenorrhoea"
-* $sct#308550003 "Normal menstrual blood loss"
-* $sct#386692008 "Menorrhagia"
+* $sct#386692008 "Menorrhagia" // heavy
+* $sct#308550003 "Normal menstrual blood loss" // normal
+* $sct#64206003 "Hypomenorrhoea" // light

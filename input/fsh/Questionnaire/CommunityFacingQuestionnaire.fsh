@@ -99,19 +99,16 @@ Title: "Community-facing Questionnaire"
 * item[=].item[=].extension[=].valueCoding = $ucum#d "day"
 
 * item[=].item[+].linkId = "3.4"
-* item[=].item[=].text = "Regularity of period length"
+* item[=].item[=].text = "Regularity of period" // Regularity of period length
 * item[=].item[=].type = #choice
 * item[=].item[=].repeats = false
-* item[=].item[=].answerOption[0].valueCoding = #regular "Regular variation"
-* item[=].item[=].answerOption[+].valueCoding = #irregular "Irregular"
+* item[=].item[=].answerValueSet = "https://simplifier.net/guide/hmb-fhir-ig/ValueSet/period-regularity"
 
 * item[=].item[+].linkId = "3.5"
 * item[=].item[=].text = "Flow Volume"
 * item[=].item[=].type = #choice
 * item[=].item[=].repeats = false
-* item[=].item[=].answerOption[0].valueCoding = #heavy "Heavy"
-* item[=].item[=].answerOption[+].valueCoding = #normal "Normal"
-* item[=].item[=].answerOption[+].valueCoding = #light "Light"
+* item[=].item[=].answerValueSet = "https://simplifier.net/guide/hmb-fhir-ig/ValueSet/period-flow-volume"
 
 * item[=].item[+].linkId = "3.6"
 * item[=].item[=].text = "Please assess the intensity of your menstrual bleeding, generally (0 = No bleeding at all, 10 = The heaviest possible menstrual bleeding I have ever had)"
