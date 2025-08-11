@@ -1,0 +1,8 @@
+id: hl7.fhir.wff.hmb
+name: Heavy Menstrual Bleeding Implementation Guide
+canonical: https://simplifier.net/guide/hmb-fhir-ig
+version: 0.1.0
+status: draft
+fhirVersion: 4.0.1
+copyrightYear: 2025+
+releaseLabel: ci-build
