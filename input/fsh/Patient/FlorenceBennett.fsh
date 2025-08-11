@@ -3,6 +3,8 @@ InstanceOf: Patient
 Usage: #example
 Title: "Florence Bennett"
 Description: "Example for Patient"
+* meta.versionId = "1"
+* meta.lastUpdated = "2025-06-01T10:00:00.000+02:00"
 * name[0].family = "Bennett"
 * name[=].given = "Florence"
 * name[=].use = #official

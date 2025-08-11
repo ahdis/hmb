@@ -2,6 +2,8 @@ Instance: CommunityFacingQuestionnaireResponseFlorenceBennett
 InstanceOf: QuestionnaireResponse
 Usage: #example
 Title: "Community-facing QR Florence Bennett"
+* meta.versionId = "1"
+* meta.lastUpdated = "2025-06-01T10:00:00.000+02:00"
 * questionnaire = "https://simplifier.net/guide/hmb-fhir-ig/Questionnaire/community-facing-questionnaire"
 * status = #in-progress
 

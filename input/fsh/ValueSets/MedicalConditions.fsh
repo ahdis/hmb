@@ -2,6 +2,8 @@ ValueSet: MedicalConditions
 Id: medical-conditions
 Title: "Medical Conditions"
 Description: "ValueSet containing codes for medical conditions"
+* ^meta.versionId = "1"
+* ^meta.lastUpdated = "2025-06-01T10:00:00.000+02:00"
 * ^experimental = true
 * ^status = #draft
 * ^url = "https://simplifier.net/guide/hmb-fhir-ig/ValueSet/medical-conditions"

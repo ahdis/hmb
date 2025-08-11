@@ -2,6 +2,8 @@ Instance: SpecialistReferralQuestionnaireResponseEmmaClark
 InstanceOf: QuestionnaireResponse
 Usage: #example
 Title: "Specialist Referral QR Emma Clark"
+* meta.versionId = "1"
+* meta.lastUpdated = "2025-06-01T10:00:00.000+02:00"
 * questionnaire = "https://simplifier.net/guide/hmb-fhir-ig/Questionnaire/specialist-referral-questionnaire"
 * status = #in-progress
 

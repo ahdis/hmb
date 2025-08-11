@@ -3,6 +3,8 @@ InstanceOf: Questionnaire
 Usage: #example
 Title: "Community-facing Questionnaire"
 * meta.profile = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire"
+* meta.versionId = "1"
+* meta.lastUpdated = "2025-06-01T10:00:00.000+02:00"
 * url = "https://simplifier.net/guide/hmb-fhir-ig/Questionnaire/community-facing-questionnaire"
 * name = "CommunityFacingQuestionnaire"
 * title = "Community-facing Questionnaire"
