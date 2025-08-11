@@ -5,12 +5,15 @@
 * Project: Heavy Menstrual Bleeding (https://simplifier.net/menstrual-bleeding)
 * Guide: FHIR IG (https://simplifier.net/guide/hmb-fhir-ig?version=current)
 
-This Implementation Guide (IG) is hosted on **Simplifier.net**. However, all changes to the IG must be made via this GitHub repository: https://github.com/ahdis/hmb.
+This Implementation Guide (IG) is hosted on Simplifier. However, all changes to the IG must be made via this GitHub repository: https://github.com/ahdis/hmb.
 
 ## GitHub Repository
-Any changes made to the master branch of this repository are automatically transferred to the IG on Simplifier via a webhook.
+Any changes made to the master branch of this repository are automatically transferred to the IG on Simplifier via a webhook. (The reverse direction—from Simplifier to GitHub—does not work the same way.)
 
-The generation of the FHIR resource JSON files is performed using SUSHI from the FSH (FHIR Shorthand) source files in the GitHub repository.
+If you would like to contribute to the IG directly, please create a Pull Request here.
+
+The source for the FHIR resources is written in **FHIR Shorthand** (FSH).
+Generation of the FHIR resource JSON files is performed using [SUSHI](https://fshschool.org/docs/sushi/) from the FSH source files in this GitHub repository.
 
 ### Process to generate and correctly (re-)place the files:
 
