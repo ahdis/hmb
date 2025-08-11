@@ -1,0 +1,75 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "PeriodPainBodySites",
+  "id": "period-pain-body-sites",
+  "title": "Period Pain Body Sites",
+  "description": "ValueSet containing codes for period pain body sites",
+  "url": "https://simplifier.net/guide/hmb-fhir-ig/ValueSet/period-pain-body-sites",
+  "meta": {
+    "versionId": "2",
+    "lastUpdated": "2025-06-05T16:00:00.000+02:00"
+  },
+  "experimental": true,
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "56459004",
+            "display": "Foot"
+          },
+          {
+            "code": "74964007",
+            "display": "Other"
+          },
+          {
+            "code": "27033000",
+            "display": "Lower abdomen structure"
+          },
+          {
+            "code": "37822005",
+            "display": "Lower back structure"
+          },
+          {
+            "code": "68505006",
+            "display": "Left side lower abdomen"
+          },
+          {
+            "code": "48544008",
+            "display": "Right side lower abdomen"
+          },
+          {
+            "code": "699611007",
+            "display": "Front of leg"
+          },
+          {
+            "code": "699620003",
+            "display": "Back of leg"
+          },
+          {
+            "code": "81939000",
+            "display": "Anal area"
+          },
+          {
+            "code": "76784001",
+            "display": "Vaginal structure"
+          },
+          {
+            "code": "302548004",
+            "display": "Entire head"
+          },
+          {
+            "code": "700036009",
+            "display": "Frontal region structure"
+          },
+          {
+            "code": "123850002",
+            "display": "Head part"
+          }
+        ]
+      }
+    ]
+  }
+}
