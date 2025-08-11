@@ -15,4 +15,4 @@ To ensure continuity of care and seamless data flow within clinical systems, an 
 ### Mapping Collected Data to FHIR Resources
 To support seamless data exchange within clinical systems—and enable integration into patient summaries—the data collected via FHIR Questionnaires and QuestionnaireResponses is mapped to relevant FHIR resources such as Patient, ServiceRequest, Condition, and others.
 
-{{render:menstrual-bleeding/workflow-ressources}} 
+{{render:menstrual-bleeding/workflow-resources}} 
