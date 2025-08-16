@@ -2,6 +2,10 @@
   filename: Index.page.md
 - name: ValueSets
   filename: ValueSets.page.md
+- name: Yes/No
+  filename: Yes-No.page.md
+- name: Severity
+  filename: Severity.page.md    
 - name: Medical Conditions
   filename: Medical-Conditions.page.md
 - name: Period Regularity

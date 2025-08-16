@@ -1,0 +1,75 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "YesNo",
+  "id": "yes-no",
+  "title": "Yes/No",
+  "description": "ValueSet containing codes for yes/no",
+  "url": "https://simplifier.net/guide/hmb-fhir-ig/ValueSet/yes-no",
+  "meta": {
+    "versionId": "1",
+    "lastUpdated": "2025-08-14T16:00:00.000+02:00"
+  },
+  "experimental": true,
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "373066001",
+            "display": "Yes",
+            "designation": [
+              {
+                "language": "de",
+                "value": "Ja"
+              },
+              {
+                "language": "en",
+                "value": "Yes"
+              },
+              {
+                "language": "es",
+                "value": "Sí"
+              },
+              {
+                "language": "fr",
+                "value": "Oui"
+              },
+              {
+                "language": "pt",
+                "value": "Sim"
+              }
+            ]
+          },
+          {
+            "code": "373067005",
+            "display": "No",
+            "designation": [
+              {
+                "language": "de",
+                "value": "Nein"
+              },
+              {
+                "language": "en",
+                "value": "No"
+              },
+              {
+                "language": "es",
+                "value": "No"
+              },
+              {
+                "language": "fr",
+                "value": "Non"
+              },
+              {
+                "language": "pt",
+                "value": "Não"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
