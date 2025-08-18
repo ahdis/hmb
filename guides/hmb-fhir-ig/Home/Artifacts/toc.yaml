@@ -6,6 +6,8 @@
   filename: Specialist-referral-form
 - name: Value Sets
   filename: Value-Sets
+- name: Profiles 
+  filename: Profiles  
 - name: Mapped Resources
   filename: Mapped-Resources
 
