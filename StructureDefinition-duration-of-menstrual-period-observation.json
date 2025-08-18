@@ -1,0 +1,121 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "duration-of-menstrual-period-observation",
+  "url": "https://simplifier.net/guide/hmb-fhir-ig/StructureDefinition/duration-of-menstrual-period-observation",
+  "name": "DurationOfMenstrualPeriodObservation",
+  "title": "Duration of Last Menstrual Period Observation",
+  "status": "draft",
+  "description": "Duration of last menstrual period.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.status",
+        "path": "Observation.status",
+        "patternCode": "final",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.category",
+        "path": "Observation.category",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "coding"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Observation.category:obstetrics",
+        "path": "Observation.category",
+        "sliceName": "obstetrics",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Observation.category:obstetrics.coding",
+        "path": "Observation.category.coding",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Observation.category:obstetrics.coding.system",
+        "path": "Observation.category.coding.system",
+        "fixedUri": "http://terminology.hl7.org/CodeSystem/observation-category"
+      },
+      {
+        "id": "Observation.category:obstetrics.coding.code",
+        "path": "Observation.category.coding.code",
+        "patternCode": "social-history"
+      },
+      {
+        "id": "Observation.category:obstetrics.coding.display",
+        "path": "Observation.category.coding.display",
+        "patternString": "Social History"
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "3144-3",
+              "system": "http://loinc.org",
+              "display": "Duration of last menstrual period"
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Patient"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x].unit",
+        "path": "Observation.value[x].unit",
+        "patternString": "d"
+      }
+    ]
+  }
+}
